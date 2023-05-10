@@ -1,5 +1,7 @@
 # Scrape
 
+![example workflow](https://github.com/goromal/scrape/actions/workflows/test.yml/badge.svg)
+
 Bare-bones Python script for web scraping based off of URLs and XPaths.
 
 ## Usage
