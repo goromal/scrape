@@ -9,6 +9,8 @@ def cli():
     argparser = argparse.ArgumentParser(description='Scrape content off the internet, quickly.')
     argparser.add_argument('scraper', choices=scrapers.keys(), help='The type of content to be scraped.')
     argparser.add_argument('page', type=str, help='Webpage url.')
+    argparser.add_argument('xpath', type=str, default=None, help='Optionally specify the XPath')
+    argparser.add_argument('ext', type=str, default=None, help='Optionally specify the file extension')
     argparser.add_argument('-o', '--output', metavar='DIRNAME',  dest='output', type=str, default='',  action='store', help='Output directory.')
     args = argparser.parse_args()
 
