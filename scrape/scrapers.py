@@ -6,7 +6,9 @@ class HTMLScraper(object):
     def __init__(self, url, outputdir):
         self.url = url
         response = requests.get(url, stream=True)
+        print(response.content)
         response.raw.decode_content = True
+        print(response.raw)
         self.tree = lxml.html.parse(response.raw)
         self.outputdir = outputdir
     
@@ -38,6 +40,7 @@ class SimpleHTMLScraper(HTMLScraper):
             else:
                 text_spec = ext_inp
             xpath_results = self.tree.xpath(xpath)
+            print(self.tree)
             if len(xpath_results) > 0:
                 try:
                     for xpath_child in self.get_xpath_children(self.tree.xpath(xpath)[0]):
