@@ -6,6 +6,7 @@ class HTMLScraper(object):
     def __init__(self, url, outputdir):
         self.url = url
         response = requests.get(url, stream=True)
+        print(response.content)
         response.raw.decode_content = True
         print(response.raw)
         self.tree = lxml.html.parse(response.raw)
