@@ -38,6 +38,7 @@ class SimpleHTMLScraper(HTMLScraper):
             else:
                 text_spec = ext_inp
             xpath_results = self.tree.xpath(xpath)
+            print(self.tree)
             if len(xpath_results) > 0:
                 try:
                     for xpath_child in self.get_xpath_children(self.tree.xpath(xpath)[0]):
